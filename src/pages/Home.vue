@@ -22,23 +22,29 @@
           <Menu-item name="Dashboard">
               <router-link to="/">
                 <i class="fa fa-dashboard"></i>
-                Dashboard  
+                主页  
               </router-link>
           </Menu-item>
-          <Menu-item name="Widget">
-              <router-link to="/widget">
+          <Menu-item name="UploadVideo">
+              <router-link to="/UploadVideo">
+                <i class="fa fa-upload"></i>
+                视频上传  
+              </router-link>
+          </Menu-item>
+          <!-- <Menu-item name="Widget">
+              <router-link to="/HomePage/widget">
                 <i class="fa fa-cogs"></i>
                 Widget  
               </router-link>
           </Menu-item>
           <Menu-item name="Panels">
-              <router-link to="/panels">
+              <router-link to="/HomePage/panels">
                 <i class="fa fa-database"></i>
                 Panels
               </router-link>
           </Menu-item>
           <Menu-item name="Editor">
-              <router-link to="/editor">
+              <router-link to="/HomePage/editor">
                 <i class="fa fa-pencil"></i>
                 Editor
               </router-link>
@@ -91,7 +97,7 @@
                   Loading
                 </router-link>
               </Menu-item>
-          </Submenu>
+          </Submenu> -->
       </Menu>
     </div>
     <div class="main-content">

@@ -12,13 +12,15 @@ import Charts from '@/pages/Charts'
 import Login from '@/pages/Login'
 import LockScreen from '@/pages/LockScreen'
 import Loading from '@/pages/Loading'
+import UploadVideo from '@/pages/UploadVideo'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      // path: '/',
+      path: '/HomePage',
       component: Home,
       children: [
         {
@@ -64,7 +66,8 @@ export default new Router({
       ]
     },
     {
-      path: '/login',
+      // path: '/login',
+      path: '/',
       name: 'Login',
       components: {
         blank: Login
@@ -82,6 +85,13 @@ export default new Router({
       name: 'Loading',
       components: {
         blank: Loading
+      }
+    },
+    {
+      path: '/UploadVideo',
+      name: 'UploadVideo',
+      components: {
+        blank: UploadVideo
       }
     }
   ]

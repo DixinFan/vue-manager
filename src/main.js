@@ -17,3 +17,6 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+import VueResource from 'vue-resource'
+Vue.use(VueResource)

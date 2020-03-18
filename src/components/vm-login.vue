@@ -8,7 +8,7 @@
      <div class="login-form">
         <Input v-model="username" placeholder="please enter username"></Input>
         <Input v-model="password" type="password" placeholder="Please enter password"></Input>
-        <Button type="primary">Login</Button>
+        <Button type="primary" @click="submit">Login</Button>
      </div>
      <div class="login-footer">
        <Checkbox v-model="remenber">Remenber</Checkbox>
@@ -21,6 +21,9 @@
   </Row>
 </template>
 <script>
+  import axios from 'axios'
+  // import Cookies from 'js-cookie'
+  // import router from 'vue-router'
   export default {
     name: 'VmLogin',
     data: function () {
@@ -28,6 +31,22 @@
         username: '',
         password: '',
         remenber: false
+      }
+    },
+    methods: {
+      async submit () {
+        confirm('确认登录')
+        var params = new URLSearchParams()
+        params.append('userName', this.username)
+        params.append('password', this.password)
+        await axios.post('http://localhost:8081/index.php/index/index/doLogin/', params)
+        .then(function (response) {
+          var code = response.data.code
+          if (code === 200) {
+            console.log('hel')
+            this.$router.push('/loading')
+          }
+        })
       }
     }
   }
