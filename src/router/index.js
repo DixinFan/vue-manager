@@ -13,6 +13,8 @@ import Login from '@/pages/Login'
 import LockScreen from '@/pages/LockScreen'
 import Loading from '@/pages/Loading'
 import UploadVideo from '@/pages/UploadVideo'
+import VideoPlay from '@/pages/VideoPlay'
+import PlayPage from '@/pages/PlayPage'
 
 Vue.use(Router)
 
@@ -27,6 +29,11 @@ export default new Router({
           path: '/',
           name: 'Dashboard',
           component: Dashboard
+        },
+        {
+          path: 'VideoPlay',
+          name: 'VideoPlay',
+          component: VideoPlay
         },
         {
           path: 'widget',
@@ -92,6 +99,13 @@ export default new Router({
       name: 'UploadVideo',
       components: {
         blank: UploadVideo
+      }
+    },
+    {
+      path: '/PlayPage',
+      name: 'PlayPage',
+      components: {
+        blank: PlayPage
       }
     }
   ]

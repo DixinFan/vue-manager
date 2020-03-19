@@ -20,9 +20,9 @@
     <div class="sidebar">
       <Menu theme="dark" width="100%" class="menu" :active-name="activeName" :accordion="true">
           <Menu-item name="Dashboard">
-              <router-link to="/">
-                <i class="fa fa-dashboard"></i>
-                主页  
+              <router-link to="/HomePage">
+                <i class="fa fa-home"></i>
+                系统主页  
               </router-link>
           </Menu-item>
           <Menu-item name="UploadVideo">
@@ -34,7 +34,13 @@
           <Menu-item name="ImageList">
               <router-link to="/HomePage/imagelist">
                 <i class="fa fa-photo"></i>
-                已上传视频列表 
+                上传视频列表 
+              </router-link>
+          </Menu-item>
+          <Menu-item name="VideoPlay">
+              <router-link to="/HomePage/VideoPlay">
+                <i class="fa fa-video-camera"></i>
+                视频播放 
               </router-link>
           </Menu-item>
           <!-- <Menu-item name="Widget">

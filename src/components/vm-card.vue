@@ -4,9 +4,9 @@
       <img :src="img" alt="">
       <div v-if="editable && type == 'vertical'" class="control">
         <span class="edit">
-          <a :href="editUrl">
-            <i class="fa fa-pencil"></i>
-          </a>     
+          <!-- <a :href="editUrl"> -->
+            <i class="fa fa-pencil" @click="editOk(img)"></i>
+          <!-- </a>      -->
         </span>
         <span class="delete">
           <i class="fa fa-trash" @click="modalDelete=true"></i>
@@ -15,11 +15,19 @@
     </div>
     <div class="card-desc panel-body">
       <h2>{{ title }}</h2>
-      <p>{{ desc }}</p>
-      <a :href="detailUrl">
+      <!-- <p>{{ desc }}</p> -->
+      <!-- <a :href="detailUrl">
         more >
-      </a>
+      </a> -->
     </div>
+    <!-- <Modal
+        v-model="modalEdit"
+        title="Edit"
+        ok-text="OK"
+        cancel-text="Cancel"
+        v-on:on-ok="editOk">
+        Are you sure to open this video?
+    </Modal> -->
     <Modal
         v-model="modalDelete"
         title="Delete"
@@ -49,19 +57,19 @@
       img: {
         type: String,
         default: require('@/assets/img/img-1.jpg')
-      },
-      desc: {
-        type: String,
-        default: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry,Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
-      },
-      detailUrl: {
-        type: String,
-        default: '#'
-      },
-      editUrl: {
-        type: String,
-        default: '#'
       }
+      // desc: {
+      //   type: String,
+      //   default: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry,Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
+      // },
+      // detailUrl: {
+      //   type: String,
+      //   default: '#'
+      // },
+      // editUrl: {
+      //   type: String,
+      //   default: '#'
+      // }
     },
     data: function () {
       return {
@@ -71,6 +79,10 @@
     methods: {
       deleteOk: function () {
         this.$emit('delete-ok')
+      },
+      editOk: function (x) {
+        console.log(x)
+        this.$router.push('/PlayPage')
       }
     }
   }

@@ -20,7 +20,8 @@
     </Row>
     <Row class="image-list" :gutter="16">
       <Col :lg="6" :sm="12" class="vm-margin" v-for="item in dataShow" :key="item.id">
-        <VmCard :editable="true" :title="item.title" :img="item.img" :desc="item.desc" :detailUrl="item.detailUrl" :editUrl="item.editUrl" @delete-ok=" deleteOk(item) "></VmCard>
+        <!-- <VmCard :editable="true" :title="item.title" :img="item.img" :desc="item.desc" :detailUrl="item.detailUrl" :editUrl="item.editUrl" @delete-ok=" deleteOk(item) "></VmCard> -->
+        <VmCard :editable="true" :title="item.title" :img="item.img" :desc="item.desc" :detailUrl="item.detailUrl" @edit-ok="enterPlayPage(item.img)" @delete-ok=" deleteOk(item) "></VmCard>
       </Col>
     </Row>
   </div>
@@ -46,9 +47,9 @@
             {
               id: '19920805',
               title: 'Title',
-              img: require('@/assets/img/img-1.jpg'),
-              desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry,Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s ly dummy tly dummy tly dummy tly dummy tly dummy tly dummy t',
-              to: '#'
+              img: require('@/assets/img/img-1.jpg')
+              // desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry,Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s ly dummy tly dummy tly dummy tly dummy tly dummy tly dummy t',
+              // to: '#'
             }
           ]
         }
@@ -87,6 +88,10 @@
       },
       deleteOk: function (data) {
         this.$emit('delete-ok', data)
+      },
+      enterPlayPage: function (x) {
+        console.log('test')
+        console.log(x)
       }
     },
     watch: {
