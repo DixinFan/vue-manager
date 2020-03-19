@@ -31,6 +31,12 @@
                 视频上传  
               </router-link>
           </Menu-item>
+          <Menu-item name="ImageList">
+              <router-link to="/HomePage/imagelist">
+                <i class="fa fa-photo"></i>
+                已上传视频列表 
+              </router-link>
+          </Menu-item>
           <!-- <Menu-item name="Widget">
               <router-link to="/HomePage/widget">
                 <i class="fa fa-cogs"></i>
