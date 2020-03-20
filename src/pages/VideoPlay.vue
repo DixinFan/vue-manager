@@ -9,6 +9,7 @@
   var count = -1
   var VideoTitle = []
   var VideoPoster = []
+  var VideoName = []
   import VmImageList from '@/components/vm-image-list'
   export default {
     name: 'ImageList',
@@ -33,6 +34,7 @@
             console.log(response.data)
             VideoTitle = response.data.data.VideoTitle
             VideoPoster = response.data.data.VideoPoster
+            VideoName = response.data.data.VideoName
             count = response.data.data.count
           })
           .catch(function (error) {
@@ -48,7 +50,8 @@
             {
               id: i,
               title: VideoTitle[i],
-              img: 'http://localhost:8081/uploads/' + VideoPoster[i]
+              img: 'http://localhost:8081/uploads/' + VideoPoster[i],
+              desc: 'http://localhost:8081/uploads/' + VideoName[i]
             //   desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry,Lorem Ipsum has been the industry\'s standard dummy text ever sincc the 1500s ly dummy tly dummy tly dummy tly dummy tly dummy tly dummy t',
             //   detailUrl: '#',
             //   editUrl: '/'

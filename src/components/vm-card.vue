@@ -5,7 +5,7 @@
       <div v-if="editable && type == 'vertical'" class="control">
         <span class="edit">
           <!-- <a :href="editUrl"> -->
-            <i class="fa fa-pencil" @click="editOk(img)"></i>
+            <i class="fa fa-pencil" @click="editOk(img, desc)"></i>
           <!-- </a>      -->
         </span>
         <span class="delete">
@@ -39,6 +39,7 @@
   </div>
 </template>
 <script>
+  import Cookies from 'js-cookie'
   export default {
     name: 'VmCard',
     props: {
@@ -57,11 +58,11 @@
       img: {
         type: String,
         default: require('@/assets/img/img-1.jpg')
+      },
+      desc: {
+        type: String,
+        default: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry,Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
       }
-      // desc: {
-      //   type: String,
-      //   default: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry,Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
-      // },
       // detailUrl: {
       //   type: String,
       //   default: '#'
@@ -80,8 +81,11 @@
       deleteOk: function () {
         this.$emit('delete-ok')
       },
-      editOk: function (x) {
-        console.log(x)
+      editOk: function (img, desc) {
+        console.log(img)
+        console.log(desc)
+        Cookies.set('VideoPoster', img)
+        Cookies.set('VideoURL', desc)
         this.$router.push('/PlayPage')
       }
     }

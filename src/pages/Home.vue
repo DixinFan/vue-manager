@@ -32,17 +32,17 @@
               </router-link>
           </Menu-item>
           <Menu-item name="ImageList">
-              <router-link to="/HomePage/imagelist">
+              <router-link to="/HomePage/VideoPlay">
                 <i class="fa fa-photo"></i>
                 上传视频列表 
               </router-link>
           </Menu-item>
-          <Menu-item name="VideoPlay">
+          <!-- <Menu-item name="VideoPlay">
               <router-link to="/HomePage/VideoPlay">
                 <i class="fa fa-video-camera"></i>
                 视频播放 
               </router-link>
-          </Menu-item>
+          </Menu-item> -->
           <!-- <Menu-item name="Widget">
               <router-link to="/HomePage/widget">
                 <i class="fa fa-cogs"></i>
