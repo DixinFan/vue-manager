@@ -15,6 +15,7 @@ import Loading from '@/pages/Loading'
 import UploadVideo from '@/pages/UploadVideo'
 import VideoPlay from '@/pages/VideoPlay'
 import PlayPage from '@/pages/PlayPage'
+import RecognizedVideo from '@/pages/RecognizedVideo'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
           path: 'VideoPlay',
           name: 'VideoPlay',
           component: VideoPlay
+        },
+        {
+          path: 'RecognizedVideo',
+          name: 'RecognizedVideo',
+          component: RecognizedVideo
         },
         {
           path: 'widget',

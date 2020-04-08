@@ -37,6 +37,18 @@
                 上传视频列表 
               </router-link>
           </Menu-item>
+          <Menu-item name="RecognizedVideo">
+              <router-link to="/HomePage/RecognizedVideo">
+                <i class="fa fa-hand-peace-o"></i>
+                已识别列表  
+              </router-link>
+          </Menu-item>
+          <Menu-item name="PlayPage">
+              <router-link to="/PlayPage">
+                <i class="fa fa-video-camera"></i>
+                视频播放 
+              </router-link>
+          </Menu-item>
           <!-- <Menu-item name="VideoPlay">
               <router-link to="/HomePage/VideoPlay">
                 <i class="fa fa-video-camera"></i>

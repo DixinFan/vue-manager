@@ -3,9 +3,9 @@
     <div class="card-img">
       <img :src="img" alt="">
       <div v-if="editable && type == 'vertical'" class="control">
-        <span class="edit">
+        <!-- <span class="edit">
             <i class="fa fa-pencil" @click="recogniteOk(desc)"></i>
-        </span>
+        </span> -->
         <span class="edit">
           <!-- <a :href="editUrl"> -->
             <i class="fa fa-play" @click="playOk(img, desc)"></i>
@@ -43,7 +43,6 @@
 </template>
 <script>
   import Cookies from 'js-cookie'
-  import axios from 'axios'
   export default {
     name: 'VmCard',
     props: {
@@ -93,9 +92,14 @@
         this.$router.push('/PlayPage')
       },
       recogniteOk: function (desc) {
-        confirm('开始进行动作识别，识别结果位于已识别列表。')
-        desc = desc.substr(30)
-        axios.get('http://192.168.1.7:5000/recognite?video=' + desc)
+        // console.log(img)
+        confirm('sure?')
+        desc = desc.substr(29)
+        // desc.replace('http://localhost:8081/uploads', '')
+        console.log(desc)
+        // Cookies.set('VideoPoster', img)
+        // Cookies.set('VideoURL', desc)
+        // this.$router.push('/PlayPage')
       }
     }
   }
