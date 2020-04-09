@@ -49,6 +49,12 @@
                 视频播放 
               </router-link>
           </Menu-item>
+          <Menu-item name="Charts">
+              <router-link to="/HomePage/charts">
+                <i class="fa fa-line-chart"></i>
+                动作分析  
+              </router-link>
+          </Menu-item>
           <!-- <Menu-item name="VideoPlay">
               <router-link to="/HomePage/VideoPlay">
                 <i class="fa fa-video-camera"></i>
@@ -78,14 +84,8 @@
                 <i class="fa fa-photo"></i>
                 Image List  
               </router-link>
-          </Menu-item>
-          <Menu-item name="Charts">
-              <router-link to="/charts">
-                <i class="fa fa-bar-chart"></i>
-                Charts  
-              </router-link>
-          </Menu-item>
-          <Submenu name="DataTable">
+          </Menu-item> -->
+          <!-- <Submenu name="DataTable">
               <template slot="title">
                   <i class="fa fa-database"></i>
                   Data Table
@@ -129,7 +129,7 @@
       <p class="vm-author">vue-manager designed by <a href="https://github.com/luosijie" target="_blank">Jesse Luo</a></p> 
     </div>
   </div>
-  </div>
+  <!-- </div> -->
 </template>
 <script>
 import VmMsgPush from '@/components/vm-msg-push.vue'

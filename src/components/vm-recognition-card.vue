@@ -3,13 +3,14 @@
     <div class="card-img">
       <img :src="img" alt="">
       <div v-if="editable && type == 'vertical'" class="control">
-        <!-- <span class="edit">
-            <i class="fa fa-pencil" @click="recogniteOk(desc)"></i>
-        </span> -->
+        <span class="create">
+          <i class="fa fa-line-chart" @click="recogniteOk(desc)"></i>
+        </span>
+        <span class="create">
+          <i class="fa fa-file-code-o" @click="modalDelete=true"></i>
+        </span>
         <span class="edit">
-          <!-- <a :href="editUrl"> -->
             <i class="fa fa-play" @click="playOk(img, desc)"></i>
-          <!-- </a>      -->
         </span>
         <span class="delete">
           <i class="fa fa-trash" @click="modalDelete=true"></i>
@@ -18,19 +19,7 @@
     </div>
     <div class="card-desc panel-body">
       <h2>{{ title }}</h2>
-      <!-- <p>{{ desc }}</p> -->
-      <!-- <a :href="detailUrl">
-        more >
-      </a> -->
     </div>
-    <!-- <Modal
-        v-model="modalEdit"
-        title="Edit"
-        ok-text="OK"
-        cancel-text="Cancel"
-        v-on:on-ok="editOk">
-        Are you sure to open this video?
-    </Modal> -->
     <Modal
         v-model="modalDelete"
         title="Delete"
@@ -66,14 +55,6 @@
         type: String,
         default: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry,Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
       }
-      // detailUrl: {
-      //   type: String,
-      //   default: '#'
-      // },
-      // editUrl: {
-      //   type: String,
-      //   default: '#'
-      // }
     },
     data: function () {
       return {
@@ -92,14 +73,10 @@
         this.$router.push('/PlayPage')
       },
       recogniteOk: function (desc) {
-        // console.log(img)
-        confirm('sure?')
-        desc = desc.substr(29)
-        // desc.replace('http://localhost:8081/uploads', '')
+        desc = desc.substr(30)
+        Cookies.set('RenderedVideoName', desc)
         console.log(desc)
-        // Cookies.set('VideoPoster', img)
-        // Cookies.set('VideoURL', desc)
-        // this.$router.push('/PlayPage')
+        this.$router.push('/HomePage/charts')
       }
     }
   }
