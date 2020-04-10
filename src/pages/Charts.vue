@@ -28,17 +28,7 @@
     },
     data () {
       return {
-        dataBar1: {
-          xAxisData: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
-          series: [
-            {
-              name: '销量',
-              type: 'bar',
-              // data: [50, 200, 360, 100, 100, 200]
-              data: [50, 200, 360, 100, 100, 200]
-            }
-          ]
-        },
+        dataBar1: {},
         dataPie: []
       }
     },
@@ -62,19 +52,30 @@
           .catch(function (error) {
             console.log(error)
           })
-        var TempList = []
+        var PieTempList = []
+        var Title = []
+        var Count = []
         for (const Aciton in ActionAnalysis) {
-          TempList.push(
+          PieTempList.push(
             {
               name: Aciton,
               value: ActionAnalysis[Aciton]
             }
           )
-          console.log(Aciton)
-          console.log(ActionAnalysis[Aciton])
+          Title.push(Aciton)
+          Count.push(ActionAnalysis[Aciton])
         }
-        console.log(TempList)
-        this.dataPie = TempList
+        this.dataBar1 = {
+          xAxisData: Title,
+          series: [
+            {
+              name: '帧数',
+              type: 'bar',
+              data: Count
+            }
+          ]
+        }
+        this.dataPie = PieTempList
       }
     }
   }
