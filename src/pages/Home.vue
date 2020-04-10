@@ -55,6 +55,12 @@
                 动作分析  
               </router-link>
           </Menu-item>
+          <Menu-item name="Charts">
+              <router-link to="/SkeletonJson">
+                <i class="fa fa-line-chart"></i>
+                骨架数据  
+              </router-link>
+          </Menu-item>
           <!-- <Menu-item name="VideoPlay">
               <router-link to="/HomePage/VideoPlay">
                 <i class="fa fa-video-camera"></i>

@@ -16,6 +16,7 @@ import UploadVideo from '@/pages/UploadVideo'
 import VideoPlay from '@/pages/VideoPlay'
 import PlayPage from '@/pages/PlayPage'
 import RecognizedVideo from '@/pages/RecognizedVideo'
+import SkeletonJson from '@/pages/SkeletonJson'
 
 Vue.use(Router)
 
@@ -112,6 +113,13 @@ export default new Router({
       name: 'PlayPage',
       components: {
         blank: PlayPage
+      }
+    },
+    {
+      path: '/SkeletonJson',
+      name: 'SkeletonJson',
+      components: {
+        blank: SkeletonJson
       }
     }
   ]

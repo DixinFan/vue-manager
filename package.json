@@ -20,7 +20,8 @@
     "axios": "^0.19.2",
     "js-cookie": "^2.2.1",
     "vue-resource": "^1.5.1",
-    "vue-video-player": "^5.0.2"
+    "vue-video-player": "^5.0.2",
+    "vue-json-viewer": "^2.2.11"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
