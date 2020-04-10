@@ -95,7 +95,14 @@
       recogniteOk: function (desc) {
         confirm('开始进行动作识别，识别结果位于已识别列表。')
         desc = desc.substr(30)
+        console.log(desc)
         axios.get('http://192.168.1.7:5000/recognite?video=' + desc)
+        .then(function (response) {
+          console.log(response.data)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
       }
     }
   }

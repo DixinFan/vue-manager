@@ -55,9 +55,9 @@
                 动作分析  
               </router-link>
           </Menu-item>
-          <Menu-item name="Charts">
+          <Menu-item name="Data">
               <router-link to="/SkeletonJson">
-                <i class="fa fa-line-chart"></i>
+                <i class="fa fa-file-code-o"></i>
                 骨架数据  
               </router-link>
           </Menu-item>

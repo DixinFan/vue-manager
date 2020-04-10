@@ -7,7 +7,7 @@
           <i class="fa fa-line-chart" @click="recogniteOk(desc)"></i>
         </span>
         <span class="create">
-          <i class="fa fa-file-code-o" @click="modalDelete=true"></i>
+          <i class="fa fa-file-code-o" @click="skeletonOk(desc)"></i>
         </span>
         <span class="edit">
             <i class="fa fa-play" @click="playOk(img, desc)"></i>
@@ -77,6 +77,12 @@
         Cookies.set('RenderedVideoName', desc)
         console.log(desc)
         this.$router.push('/HomePage/charts')
+      },
+      skeletonOk: function (desc) {
+        desc = desc.substr(30)
+        Cookies.set('RenderedVideoName', desc)
+        console.log(desc)
+        this.$router.push('/SkeletonJson')
       }
     }
   }
