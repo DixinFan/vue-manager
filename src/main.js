@@ -29,4 +29,3 @@ Vue.use(VideoPlayer)
 import JsonViewer from 'vue-json-viewer/ssr'
 Vue.use(JsonViewer)
 import 'vue-json-viewer/style.css'
-
