@@ -34,7 +34,7 @@
           <Menu-item name="ImageList">
               <router-link to="/HomePage/VideoPlay">
                 <i class="fa fa-photo"></i>
-                上传视频列表 
+                已上传视频
               </router-link>
           </Menu-item>
           <Menu-item name="RecognizedVideo">
