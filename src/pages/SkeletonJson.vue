@@ -1,8 +1,11 @@
 <template>
     <div id="app">
         <div class="layout">
-            <h1>vue-json-view</h1>
-            <a target="_blank" href="https://github.com/zhaoxuhui1122/vue-json-view">使用文档</a>
+            <h1>
+                ［数据［视频帧编号，骨架［姿态［横坐标，纵坐标］，得分］］，标签，标签编号］
+            </h1>
+            <!-- <h1>vue-json-view</h1> -->
+            <!-- <a target="_blank" href="https://github.com/zhaoxuhui1122/vue-json-view">使用文档</a> -->
 
             <div class="setting">
                 <ul>
@@ -23,13 +26,13 @@
                     </li>
 
                     <li>
-                        <label>deep</label>
+                        <label>深度</label>
                         <select v-model="deep">
                             <option v-for="item in 10" :value="item">{{item}}</option>
                         </select>
                     </li>
                     <li>
-                        <label>icon-style</label>
+                        <label>图标风格</label>
                         <select v-model="iconStyle">
                             <option value="square">square</option>
                             <option value="circle">circle</option>
@@ -37,18 +40,18 @@
                         </select>
                     </li>
                     <li>
-                        <label>icon-color</label>
+                        <label>图标颜色</label>
                         <input type="color" v-model="color1">
                         <input type="color"  v-model="color2">
                     </li>
                     <li>
-                        <label>font-size</label>
+                        <label>字体大小</label>
                         <select v-model="fontSize">
                             <option v-for="item in 10" :value="item+11">{{item+11}}</option>
                         </select>
                     </li>
                     <li>
-                        <label for="line-height">line-height</label>
+                        <label for="line-height">线高</label>
                         <select v-model="lineHeight">
                             <option v-for="item in 20" :value="item*2+14">{{item*2+14}}</option>
                         </select>
@@ -86,7 +89,7 @@
           theme: '',
           fontSize: 14,
           lineHeight: 24,
-          deep: 5,
+          deep: 6,
           // closed: false,
           iconStyle: 'square',
           closed: false,
