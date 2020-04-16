@@ -29,7 +29,7 @@
         var userName = Cookies.get('userName')
         var params = new URLSearchParams()
         params.append('userName', userName)
-        await axios.post('/playRecognitedPoster', params)
+        await axios.post('/listRecognitedPoster', params)
           .then(function (response) {
             console.log(response.data)
             VideoTitle = response.data.data.VideoTitle
