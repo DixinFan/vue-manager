@@ -37,7 +37,7 @@
     props: {
       title: {
         type: String,
-        default: 'Image List'
+        default: '已识别列表'
       },
       // origin data
       data: {

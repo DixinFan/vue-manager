@@ -3,7 +3,8 @@
     <Row class="header" type="flex" align="middle">
       <div class="logo">
         <img src="../assets/img/logo.png" height="30" alt="">
-        <span>VUE</span>MANAGER <Tag>beta</Tag>
+        <!-- <span>VUE</span>MANAGER <Tag>beta</Tag> -->
+        基于<span>骨架</span>的动作识别系统
       </div>
       <VmMsgPush style="margin-left:20px" :data="msgPushData"></VmMsgPush>
       <Dropdown class="login-info" placement="bottom-end">

@@ -64,6 +64,7 @@ export default {
       var FlagTwo = (this.uploadFile[1].type === 'image/jpeg') && (this.uploadFile[0].type === 'video/mp4')
       if (FlagOne || FlagTwo) {
         confirm('上传符合规范，立即上传文件')
+        this.$router.push('/Loading')
         this.upload()
       } else {
         this.$Message.error('上传一个mp4视频文件和一个jpg封面文件')
@@ -96,6 +97,7 @@ export default {
       await this.$http.post('http://localhost:8081/index.php/index/index/uploadVideo/', param, config).then(
         function (response) {
           console.log(response.data)
+          this.$router.push('/HomePage/VideoPlay')
         }
       ).catch(
         function (error) {

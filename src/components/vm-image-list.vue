@@ -37,7 +37,8 @@
     props: {
       title: {
         type: String,
-        default: 'Image List'
+        // default: 'Image List'
+        default: '已上传视频'
       },
       // origin data
       data: {

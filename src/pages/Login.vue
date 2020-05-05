@@ -4,20 +4,26 @@
     <Col span="10" class="login-form">
       <div class="login-header">
         <img src="../assets/img/logo.png" height="80" alt="">
-        <p><span>VUE</span>MANAGER</p>
+        <!-- <p><span>Skeleton </span>Action Recognition</p> -->
+        <p>基于<span>骨架</span>的动作识别系统</p>
       </div>
       <div class="login-form">
-          <Input v-model="username" placeholder="please enter username"></Input>
+          <!-- <Input v-model="username" placeholder="please enter username"></Input>
           <Input v-model="password" type="password" placeholder="Please enter password"></Input>
-          <Button type="primary" @click="submit">Login</Button>
+          <Button type="primary" @click="submit">Login</Button> -->
+          <Input v-model="username" placeholder="请输入用户名"></Input>
+          <Input v-model="password" type="password" placeholder="请输入密码"></Input>
+          <Button type="primary" @click="submit">登录</Button>
       </div>
       <div class="login-footer">
-        <Checkbox v-model="remenber">Remenber</Checkbox>
-        <span class="forget"><a href="#">Forget Password</a></span>
+        <!-- <Checkbox v-model="remenber">Remenber</Checkbox>
+        <span class="forget"><a href="#">Forget Password</a></span> -->
+        <Checkbox v-model="remenber">记住密码</Checkbox>
+        <span class="forget"><a href="#">忘记密码</a></span>
       </div>
     </Col>
     <Col span="14" class="login-ad">
-      <span class="photo-author">Photo: Jure Kravanja</span>
+      <!-- <span class="photo-author">Photo: Peng Zhang</span> -->
     </Col>
     </Row>
   </div>
@@ -46,7 +52,7 @@
         })
         if (flag) {
           Cookies.set('userName', this.username)
-          this.$router.push('/HomePage')
+          this.$router.push('/HomePage/VideoPlay')
         }
       }
     }
