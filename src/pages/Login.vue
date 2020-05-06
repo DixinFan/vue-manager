@@ -18,8 +18,11 @@
       <div class="login-footer">
         <!-- <Checkbox v-model="remenber">Remenber</Checkbox>
         <span class="forget"><a href="#">Forget Password</a></span> -->
-        <Checkbox v-model="remenber">记住密码</Checkbox>
-        <span class="forget"><a href="#">忘记密码</a></span>
+        <span><i @click="register">注册</i></span>
+        <span　class="forget"><i @click="register">忘记密码</i></span>
+        <!-- <Checkbox v-model="remenber">记住密码</Checkbox> -->
+        <!-- <span class="forget"><a href="#">忘记密码</a></span> -->
+        <!-- <span class="forget"><a @click="register">忘记密码</a></span> -->
       </div>
     </Col>
     <Col span="14" class="login-ad">
@@ -54,6 +57,9 @@
           Cookies.set('userName', this.username)
           this.$router.push('/HomePage/VideoPlay')
         }
+      },
+      register () {
+        this.$router.push('/Register')
       }
     }
   }

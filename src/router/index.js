@@ -17,6 +17,7 @@ import VideoPlay from '@/pages/VideoPlay'
 import PlayPage from '@/pages/PlayPage'
 import RecognizedVideo from '@/pages/RecognizedVideo'
 import SkeletonJson from '@/pages/SkeletonJson'
+import Register from '@/pages/Register'
 
 Vue.use(Router)
 
@@ -120,6 +121,13 @@ export default new Router({
       name: 'SkeletonJson',
       components: {
         blank: SkeletonJson
+      }
+    },
+    {
+      path: '/Register',
+      name: 'Register',
+      components: {
+        blank: Register
       }
     }
   ]
