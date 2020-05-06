@@ -11,8 +11,11 @@
           <i class="fa fa-play" @click="playOk(img, desc)"></i>
           <!-- </a>      -->
         </span>
-        <span class="delete">
+        <!-- <span class="delete">
           <i class="fa fa-trash" @click="modalDelete=true"></i>
+        </span> -->
+        <span class="delete">
+          <i class="fa fa-trash" @click="deleteOk(desc)"></i>
         </span>
       </div>
     </div>
@@ -37,13 +40,14 @@
       ok-text="OK"
       cancel-text="Cancel"
       v-on:on-ok="deleteOk"
-    >Are you sure to delete this data?</Modal>
+    >确认删除本条已上传动作视频?</Modal>
   </div>
 </template>
 <script>
 import Cookies from 'js-cookie'
 import axios from 'axios'
 var flag = false
+var DeleteFlag = false
 export default {
   name: 'VmCard',
   props: {
@@ -83,8 +87,24 @@ export default {
     }
   },
   methods: {
-    deleteOk: function () {
-      this.$emit('delete-ok')
+    async deleteOk (desc) {
+      // this.$emit('delete-ok')
+      confirm('确认删除本条上传视频及动作识别结果？')
+      this.$router.push('/Loading')
+      desc = desc.substr(30)
+      var params = new URLSearchParams()
+      params.append('UploadedVideoName', desc)
+      await axios.post('http://localhost:8081/index.php/index/index/deleteUploadedVideo/', params)
+      .then(function (response) {
+        var code = response.data.code
+        if (code === 200) {
+          DeleteFlag = true
+        }
+      })
+      if (DeleteFlag) {
+        confirm('删除成功')
+        this.$router.push('/HomePage/VideoPlay')
+      }
     },
     playOk: function (img, desc) {
       console.log(img)
@@ -95,7 +115,7 @@ export default {
     },
     // recogniteOk: function(desc) {
     async recogniteOk (desc) {
-      confirm('开始进行动作识别，请等待，识别结果将位于已识别列表。')
+      confirm('开始进行动作识别。显卡算力较弱，请耐心等待识别结果。别结果将位于已识别列表。')
       this.$router.push('/Loading')
       desc = desc.substr(30)
       console.log('i am desc')
@@ -107,6 +127,7 @@ export default {
         flag = true
       })
       if (flag) {
+        confirm('识别成功，请确认')
         this.$router.push('/HomePage/RecognizedVideo')
       }
     }

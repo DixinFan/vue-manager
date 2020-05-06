@@ -56,8 +56,12 @@ export default {
         this.$Message.error('未选择上传文件')
         return false
       }
+      if (this.uploadFile.length === 1) {
+        this.$Message.error('选择一个mp4视频文件和一个jpg封面文件')
+        return false
+      }
       if (this.uploadFile.length > 2) {
-        this.$Message.error('仅上传一个mp4视频文件和一个jpg封面文件')
+        this.$Message.error('仅选择上传一个mp4视频文件和一个jpg封面文件')
         return false
       }
       var FlagOne = (this.uploadFile[0].type === 'image/jpeg') && (this.uploadFile[1].type === 'video/mp4')
@@ -97,6 +101,7 @@ export default {
       await this.$http.post('http://localhost:8081/index.php/index/index/uploadVideo/', param, config).then(
         function (response) {
           console.log(response.data)
+          confirm('上传成功')
           this.$router.push('/HomePage/VideoPlay')
         }
       ).catch(

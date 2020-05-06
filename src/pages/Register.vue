@@ -50,7 +50,8 @@
               }
             })
             if (flag) {
-              this.$router.push('/HomePage/VideoPlay')
+              confirm('注册成功')
+              this.$router.push('/')
             }
           }
         }

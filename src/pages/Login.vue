@@ -19,7 +19,7 @@
         <!-- <Checkbox v-model="remenber">Remenber</Checkbox>
         <span class="forget"><a href="#">Forget Password</a></span> -->
         <span><i @click="register">注册</i></span>
-        <span　class="forget"><i @click="register">忘记密码</i></span>
+        <span　class="forget"><i @click="retrieve">忘记密码</i></span>
         <!-- <Checkbox v-model="remenber">记住密码</Checkbox> -->
         <!-- <span class="forget"><a href="#">忘记密码</a></span> -->
         <!-- <span class="forget"><a @click="register">忘记密码</a></span> -->
@@ -35,6 +35,7 @@
   import axios from 'axios'
   import Cookies from 'js-cookie'
   var flag = false
+  var RetrieveSuccess = false
   export default {
     data: {
       username: '',
@@ -60,6 +61,26 @@
       },
       register () {
         this.$router.push('/Register')
+      },
+      async retrieve () {
+        if (!this.username) {
+          confirm('请输入用户名')
+        } else {
+          this.$router.push('/Loading')
+          var params = new URLSearchParams()
+          params.append('UserName', this.username)
+          await axios.post('http://localhost:8081/index.php/index/index/doRetrieve/', params)
+          .then(function (response) {
+            var code = response.data.code
+            if (code === 200) {
+              RetrieveSuccess = true
+            }
+          })
+          if (RetrieveSuccess) {
+            confirm('密码已发送至' + this.username + '，请查收')
+            this.$router.push('/')
+          }
+        }
       }
     }
   }

@@ -13,7 +13,7 @@
             <i class="fa fa-play" @click="playOk(img, desc)"></i>
         </span>
         <span class="delete">
-          <i class="fa fa-trash" @click="modalDelete=true"></i>
+          <i class="fa fa-trash" @click="deleteOk(desc)"></i>
         </span>
       </div>
     </div>
@@ -32,6 +32,8 @@
 </template>
 <script>
   import Cookies from 'js-cookie'
+  import axios from 'axios'
+  var DeleteFlag = false
   export default {
     name: 'VmCard',
     props: {
@@ -62,8 +64,27 @@
       }
     },
     methods: {
-      deleteOk: function () {
-        this.$emit('delete-ok')
+      // deleteOk: function () {
+      //   this.$emit('delete-ok')
+      // },
+      async deleteOk (desc) {
+        // this.$emit('delete-ok')
+        confirm('确认删除本条动作识别结果？')
+        this.$router.push('/Loading')
+        desc = desc.substr(30)
+        var params = new URLSearchParams()
+        params.append('RenderedVideoName', desc)
+        await axios.post('http://localhost:8081/index.php/index/index/deleteRenderedVideo/', params)
+        .then(function (response) {
+          var code = response.data.code
+          if (code === 200) {
+            DeleteFlag = true
+          }
+        })
+        if (DeleteFlag) {
+          confirm('删除成功')
+          this.$router.push('/HomePage/RecognizedVideo')
+        }
       },
       playOk: function (img, desc) {
         console.log(img)
